@@ -110,4 +110,47 @@ class App {
           analytics: '/api/analytics',
           user: '/api/user',
         },
-        documentation: 'https://github.com/you
+        documentation: 'https://github.com/yourusername/mental-math-app',
+      });
+    });
+  }
+
+  private initializeErrorHandling(): void {
+    // 404 handler
+    this.app.use(notFound);
+    
+    // Global error handler
+    this.app.use(errorHandler);
+  }
+
+  public listen(): void {
+    this.app.listen(this.port, () => {
+      console.log(`🚀 Server running on port ${this.port}`);
+      console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`🔗 API URL: http://localhost:${this.port}/api`);
+    });
+  }
+}
+
+// Create and start the server
+const server = new App();
+server.listen();
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received. Shutting down gracefully...');
+  mongoose.connection.close(() => {
+    console.log('MongoDB connection closed.');
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT received. Shutting down gracefully...');
+  mongoose.connection.close(() => {
+    console.log('MongoDB connection closed.');
+    process.exit(0);
+  });
+});
+
+export default server;
