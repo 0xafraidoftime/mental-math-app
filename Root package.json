@@ -1,0 +1,51 @@
+{
+  "name": "mental-math-app",
+  "version": "1.0.0",
+  "description": "A comprehensive mental math practice application with adaptive difficulty",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
+    "client:dev": "cd client && npm start",
+    "server:dev": "cd server && npm run dev",
+    "build": "npm run client:build && npm run server:build",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "test": "npm run client:test && npm run server:test",
+    "client:test": "cd client && npm test",
+    "server:test": "cd server && npm test",
+    "lint": "npm run client:lint && npm run server:lint",
+    "client:lint": "cd client && npm run lint",
+    "server:lint": "cd server && npm run lint",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "clean": "rm -rf node_modules client/node_modules server/node_modules client/build server/dist",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "math",
+    "education",
+    "learning",
+    "practice",
+    "arithmetic",
+    "mental-math",
+    "adaptive-learning"
+  ],
+  "author": "AfraidofTime",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xafraidoftime/mental-math-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xafraidoftime/mental-math-app/issues"
+  },
+  "homepage": "https://github.com/0xafraidoftime/mental-math-app#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
