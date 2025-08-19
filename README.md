@@ -93,7 +93,7 @@ mental-math-app/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/mental-math-app.git
+git clone https://github.com/0xafraidoftime/mental-math-app.git
 cd mental-math-app
 ```
 
@@ -342,7 +342,7 @@ Required environment variables:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Acknowledgments
 
